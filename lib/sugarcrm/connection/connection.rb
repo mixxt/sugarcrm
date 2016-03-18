@@ -56,7 +56,6 @@ module SugarCRM; class Connection
     @connection = Net::HTTP.new(@url.host, @url.port)
     if @url.scheme == "https"
       @connection.use_ssl = true
-      @connection.verify_mode = OpenSSL::SSL::VERIFY_NONE
     end
 
     # Ruby 1.9.3 will throw an error if server does not recognize
