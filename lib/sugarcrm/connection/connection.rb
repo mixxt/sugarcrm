@@ -81,7 +81,7 @@ module SugarCRM; class Connection
     # Send Ze Request
     begin
       if @request.length > 3900
-        @response = @connection.post(@url.path, @request)
+        @response = @connection.post(@url.path, @request.to_s)
       else
         @response = @connection.get(@url.path.dup + "?" + @request.to_s)
       end
